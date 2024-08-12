@@ -1,0 +1,13 @@
+image:
+  repository: louislam/uptime-kuma
+  tag: latest
+replicaCount: 1
+service:
+  type: ClusterIP
+  port: 3001
+persistence:
+  enabled: true
+  existingClaim: ""
+  accessMode: ReadWriteOnce
+  size: 1Gi
+  mountPath: /app/data
