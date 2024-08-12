@@ -1,64 +1,73 @@
 {
+    "name": "uptimekuma",
+    "location": "./charts/uptimekuma",
     "version": "1.0.0",
-    "trains": {
-      "charts": {
-        "name": "charts",
-        "location": "charts",
-        "catalogs": {
-          "uptimekuma": {
-            "categories": ["Monitoring"],
-            "icon_url": "https://example.com/path/to/icon.png",
-            "name": "Uptime Kuma",
-            "app_readme": "https://example.com/path/to/uptimekuma/README.md",
-            "location": "charts/uptimekuma",
-            "maintainers": [
-              {
-                "name": "Your Name",
-                "email": "youremail@example.com"
-              }
-            ],
-            "versions": {
-              "1.0.0": {
-                "version": "1.0.0",
-                "app_version": "latest",
-                "location": "charts/uptimekuma/1.0.0",
-                "requires": {
-                  "kubernetes": ">=1.20.0-0"
-                },
-                "changes": [
-                  "Initial release"
-                ]
-              }
-            }
-          },
-          "anotherchart": {
-            "categories": ["Example"],
-            "icon_url": "https://example.com/path/to/icon.png",
-            "name": "Another Chart",
-            "app_readme": "https://example.com/path/to/anotherchart/README.md",
-            "location": "charts/anotherchart",
-            "maintainers": [
-              {
-                "name": "Your Name",
-                "email": "youremail@example.com"
-              }
-            ],
-            "versions": {
-              "1.0.0": {
-                "version": "1.0.0",
-                "app_version": "latest",
-                "location": "charts/anotherchart/1.0.0",
-                "requires": {
-                  "kubernetes": ">=1.20.0-0"
-                },
-                "changes": [
-                  "Initial release"
-                ]
-              }
-            }
-          }
+    "icon": "https://raw.githubusercontent.com/louislam/uptime-kuma/master/public/icon.png",
+    "description": "Uptime Kuma - A fancy self-hosted monitoring tool.",
+    "categories": ["Monitoring", "Networking"],
+    "maintainers": [
+        {
+            "name": "Louis Lam",
+            "email": "louislam.hk@gmail.com",
+            "url": "https://github.com/louislam"
         }
-      }
-    }
-  }
-  
+    ],
+    "sources": [
+        {
+            "name": "Uptime Kuma GitHub",
+            "url": "https://github.com/louislam/uptime-kuma"
+        }
+    ],
+    "tags": ["monitoring", "uptime", "networking", "self-hosted"],
+    "appVersion": "latest",
+    "chartVersion": "1.0.0",
+    "questions": [
+        {
+            "variable": "image.repository",
+            "label": "Container Image Repository",
+            "description": "The repository for the Uptime Kuma image.",
+            "type": "input",
+            "default": "louislam/uptime-kuma",
+            "required": true
+        },
+        {
+            "variable": "image.tag",
+            "label": "Container Image Tag",
+            "description": "The tag of the Uptime Kuma image.",
+            "type": "input",
+            "default": "latest",
+            "required": true
+        },
+        {
+            "variable": "service.port",
+            "label": "Service Port",
+            "description": "The port to access Uptime Kuma.",
+            "type": "input",
+            "default": 3001,
+            "required": true
+        },
+        {
+            "variable": "persistence.enabled",
+            "label": "Enable Persistence",
+            "description": "Whether to enable persistent storage for Uptime Kuma.",
+            "type": "boolean",
+            "default": true
+        },
+        {
+            "variable": "persistence.size",
+            "label": "Persistence Storage Size",
+            "description": "Size of the storage for Uptime Kuma data.",
+            "type": "input",
+            "default": "1Gi",
+            "required": true
+        },
+        {
+            "variable": "persistence.mountPath",
+            "label": "Persistence Mount Path",
+            "description": "The path where the persistent data will be stored inside the container.",
+            "type": "input",
+            "default": "/app/data",
+            "required": true
+        }
+    ]
+}
