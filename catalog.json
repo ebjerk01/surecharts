@@ -1,18 +1,38 @@
 {
-    "version": "1.0.0",
+    "version": "v1",
     "catalog": {
-      "version": "v1",
-      "train": "charts",
-      "location": "./charts",
-      "packages": [
-        {
-          "app_id": "uptimekuma",
-          "name": "uptimekuma",
-          "description": "Uptime Kuma - Self-hosted monitoring tool",
-          "version": "1.0.0",
-          "location": "./charts/uptimekuma"
+      "trains": {
+        "charts": {
+          "packages": {
+            "uptimekuma": {
+              "name": "uptimekuma",
+              "app_id": "uptimekuma",
+              "description": "Uptime Kuma - Self-hosted monitoring tool",
+              "location": "./charts/uptimekuma",
+              "versions": {
+                "1.0.0": {
+                  "version": "1.0.0",
+                  "healthy": true,
+                  "artifact": "helm"
+                }
+              }
+            },
+            "anotherchart": {
+              "name": "anotherchart",
+              "app_id": "anotherchart",
+              "description": "Another example chart",
+              "location": "./charts/anotherchart",
+              "versions": {
+                "1.0.0": {
+                  "version": "1.0.0",
+                  "healthy": true,
+                  "artifact": "helm"
+                }
+              }
+            }
+          }
         }
-      ]
+      }
     }
   }
   
