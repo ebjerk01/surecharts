@@ -1,33 +1,59 @@
 {
-    "version": "v1",
-    "catalog": {
-      "trains": {
-        "charts": {
-          "packages": {
-            "uptimekuma": {
-              "name": "uptimekuma",
-              "app_id": "uptimekuma",
-              "description": "Uptime Kuma - Self-hosted monitoring tool",
-              "location": "./charts/uptimekuma",
-              "versions": {
-                "1.0.0": {
-                  "version": "1.0.0",
-                  "healthy": true,
-                  "artifact": "helm"
-                }
+    "version": "1.0.0",
+    "trains": {
+      "charts": {
+        "name": "charts",
+        "location": "charts",
+        "catalogs": {
+          "uptimekuma": {
+            "categories": ["Monitoring"],
+            "icon_url": "https://example.com/path/to/icon.png",
+            "name": "Uptime Kuma",
+            "app_readme": "https://example.com/path/to/uptimekuma/README.md",
+            "location": "charts/uptimekuma",
+            "maintainers": [
+              {
+                "name": "Your Name",
+                "email": "youremail@example.com"
               }
-            },
-            "anotherchart": {
-              "name": "anotherchart",
-              "app_id": "anotherchart",
-              "description": "Another example chart",
-              "location": "./charts/anotherchart",
-              "versions": {
-                "1.0.0": {
-                  "version": "1.0.0",
-                  "healthy": true,
-                  "artifact": "helm"
-                }
+            ],
+            "versions": {
+              "1.0.0": {
+                "version": "1.0.0",
+                "app_version": "latest",
+                "location": "charts/uptimekuma/1.0.0",
+                "requires": {
+                  "kubernetes": ">=1.20.0-0"
+                },
+                "changes": [
+                  "Initial release"
+                ]
+              }
+            }
+          },
+          "anotherchart": {
+            "categories": ["Example"],
+            "icon_url": "https://example.com/path/to/icon.png",
+            "name": "Another Chart",
+            "app_readme": "https://example.com/path/to/anotherchart/README.md",
+            "location": "charts/anotherchart",
+            "maintainers": [
+              {
+                "name": "Your Name",
+                "email": "youremail@example.com"
+              }
+            ],
+            "versions": {
+              "1.0.0": {
+                "version": "1.0.0",
+                "app_version": "latest",
+                "location": "charts/anotherchart/1.0.0",
+                "requires": {
+                  "kubernetes": ">=1.20.0-0"
+                },
+                "changes": [
+                  "Initial release"
+                ]
               }
             }
           }
