@@ -11,13 +11,6 @@
           "description": "Uptime Kuma - Self-hosted monitoring tool",
           "version": "1.0.0",
           "location": "./charts/uptimekuma"
-        },
-        {
-          "app_id": "anotherchart",
-          "name": "anotherchart",
-          "description": "Another example chart",
-          "version": "1.0.0",
-          "location": "./charts/anotherchart"
         }
       ]
     }
